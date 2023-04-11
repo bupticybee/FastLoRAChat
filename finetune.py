@@ -92,7 +92,18 @@ def train(
     world_size = int(os.environ.get("WORLD_SIZE", 1))
     ddp = world_size != 1
     if ddp:
-        device_map = {"": int(os.environ.get("LOCAL_RANK") or 0)}
+        #device_map = {"": int(os.environ.get("LOCAL_RANK") or 0)}
+        device_map = "auto"
+        rank = int(os.environ.get("LOCAL_RANK", 0))
+        print("ddp,rank:",rank)
+        """
+        if rank == 0:
+            os.environ["CUDA_VISIBLE_DEVICES"]="0,2"
+        elif rank == 1:
+            os.environ["CUDA_VISIBLE_DEVICES"]="1,3"
+        else:
+            raise
+        """
         gradient_accumulation_steps = gradient_accumulation_steps // world_size
 
     # Check if parameter passed or if set within environ
