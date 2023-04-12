@@ -4,5 +4,5 @@
     --base_model '../llama-13b/' \
     --data_path '../dataset/cleaned_processed.json' \
     --output_dir './lora-fastchat-alpaca' \
-    --num_epochs 6
+    --num_epochs 3
     

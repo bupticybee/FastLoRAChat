@@ -264,7 +264,7 @@ def train(
     output_dir: str = "./lora-alpaca",
     # training hyperparams
     batch_size: int = 128,
-    micro_batch_size: int = 1,
+    micro_batch_size: int = 2,
     num_epochs: int = 3,
     learning_rate: float = 3e-4,
     cutoff_len: int = 256,
@@ -359,7 +359,7 @@ def train(
 
     tokenizer = LlamaTokenizer.from_pretrained(
         base_model,
-        model_max_length=2048,
+        model_max_length=1024,
         padding_side="right",
         use_fast=False
     )
