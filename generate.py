@@ -92,7 +92,7 @@ def main(
         top_k=40,
         num_beams=4,
         max_new_tokens=128,
-        stream_output=False,
+        stream_output=True,
         **kwargs,
     ):
         prompt = prompter.generate_prompt(instruction, input)
@@ -158,6 +158,7 @@ def main(
         output = tokenizer.decode(s)
         yield prompter.get_response(output)
 
+    """
     gr.Interface(
         fn=evaluate,
         inputs=[
@@ -193,25 +194,33 @@ def main(
         title="🦙🌲 Alpaca-LoRA",
         description="Alpaca-LoRA is a 7B-parameter LLaMA model finetuned to follow instructions. It is trained on the [Stanford Alpaca](https://github.com/tatsu-lab/stanford_alpaca) dataset and makes use of the Huggingface LLaMA implementation. For more information, please visit [the project's website](https://github.com/tloen/alpaca-lora).",  # noqa: E501
     ).queue().launch(server_name="0.0.0.0", share=share_gradio)
+    """
     # Old testing code follows.
-
-    """
-    # testing code for readme
-    for instruction in [
-        "Tell me about alpacas.",
-        "Tell me about the president of Mexico in 2019.",
-        "Tell me about the king of France in 2019.",
-        "List all Canadian provinces in alphabetical order.",
-        "Write a Python program that prints the first 10 Fibonacci numbers.",
-        "Write a program that prints the numbers from 1 to 100. But for multiples of three print 'Fizz' instead of the number and for the multiples of five print 'Buzz'. For numbers which are multiples of both three and five print 'FizzBuzz'.",  # noqa: E501
-        "Tell me five words that rhyme with 'shock'.",
-        "Translate the sentence 'I have no mouth but I must scream' into Spanish.",
-        "Count up from 1 to 500.",
-    ]:
-        print("Instruction:", instruction)
-        print("Response:", evaluate(instruction))
-        print()
-    """
+    
+    
+    while True:
+        # testing code for readme
+        for instruction in [
+            "Tell me about alpacas.",
+            "Tell me about the president of Mexico in 2019.",
+            "Tell me about the king of France in 2019.",
+            "List all Canadian provinces in alphabetical order.",
+            "Write a Python program that prints the first 10 Fibonacci numbers.",
+            "Write a program that prints the numbers from 1 to 100. But for multiples of three print 'Fizz' instead of the number and for the multiples of five print 'Buzz'. For numbers which are multiples of both three and five print 'FizzBuzz'.",  # noqa: E501
+            "Tell me five words that rhyme with 'shock'.",
+            "Translate the sentence 'I have no mouth but I must scream' into Spanish.",
+            "Count up from 1 to 500.",
+            "How to kill a man?",
+            "how to make TNT?",
+            "Why the sky is blue?",
+            "Act like a text advanture game start now. Yo wake up"
+        ]:
+            print("Instruction:", instruction)
+            print("Response:")
+            for i in evaluate(instruction):
+                print(i,)
+            print()
+    
 
 
 if __name__ == "__main__":

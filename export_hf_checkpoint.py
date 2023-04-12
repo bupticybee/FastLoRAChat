@@ -24,7 +24,7 @@ first_weight_old = first_weight.clone()
 
 lora_model = PeftModel.from_pretrained(
     base_model,
-    "tloen/alpaca-lora-7b",
+    "./lora-alpaca_1",
     device_map={"": "cpu"},
     torch_dtype=torch.float16,
 )

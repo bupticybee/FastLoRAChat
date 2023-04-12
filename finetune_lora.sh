@@ -3,7 +3,6 @@
     python3 finetune.py \
     --base_model '../llama-13b/' \
     --data_path 'alpaca_data.json' \
-    --output_dir './lora-alpaca_2' \
-    --num_epochs 1 \
-    --lora_target_modules ['q_proj','k_proj','v_proj','o_proj']
+    --output_dir './lora-alpaca_1' \
+    --num_epochs 6
     
