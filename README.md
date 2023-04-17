@@ -91,7 +91,7 @@ who want to run inference in projects like [llama.cpp](https://github.com/ggerga
 or [alpaca.cpp](https://github.com/antimatter15/alpaca.cpp).
 
 
-### Examples
+### Examples of model
 
 ```
 Human: list some major power in the world
