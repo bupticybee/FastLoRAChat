@@ -1,5 +1,9 @@
 # FastLoRAChat
 
+LLama Lora finetune with ShareGPT dataset.
+
+![logo](imgs/logo.jpeg)
+
 - 🤗 Latest Model (Sunlight 13B) [here](https://huggingface.co/icybee/fast_lora_chat_v1_sunlight)
 
 This repository combined features of [alpaca-lora](https://github.com/tloen/alpaca-lora) and [Fastchat](https://github.com/lm-sys/FastChat):
