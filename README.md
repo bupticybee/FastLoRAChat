@@ -1,6 +1,6 @@
 # FastLoRAChat
 
-LLama Lora finetune with ShareGPT dataset.
+LLama finetune using LORA with ShareGPT dataset, able to train on low-end graphic card.
 
 ![logo](imgs/logo.jpeg)
 
