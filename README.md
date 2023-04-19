@@ -4,6 +4,8 @@ LLama finetune using LORA with ShareGPT dataset, able to train on low-end graphi
 
 ![logo](imgs/logo.jpeg)
 
+(Picture by stablediffusion)
+
 - 🤗 Latest Model (Sunlight 13B) [here](https://huggingface.co/icybee/fast_lora_chat_v1_sunlight)
 
 This repository combined features of [alpaca-lora](https://github.com/tloen/alpaca-lora) and [Fastchat](https://github.com/lm-sys/FastChat):
