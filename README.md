@@ -21,11 +21,16 @@ The purpose of this project is to produce similar result to the Fastchat model, 
 1. Install dependencies
 
    ```bash
-   pip3 install fschat
+   git clone https://github.com/lm-sys/FastChat.git
+   cd FastChat
+   git checkout 4732169b937acc1b0ecb3f88656f9097f33ae841
+   pip install -e .
+   cd ..
+   
    git clone https://github.com/huggingface/transformers.git
    cd transformers
    git checkout 41a2f3529c6b56866c317031375ffd3e7b8bea01
-   pip install .
+   pip install -e .
    ```
 
 ### Inference
